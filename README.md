@@ -69,6 +69,9 @@ Complete parameter list (defaults in build or generated if missing):
 | `[Station]` | `lat`          | Latitude (decimal degrees, dot) | -90 to 90 | `42.0000` |
 | `[Station]` | `lon`          | Longitude (decimal degrees, dot) | -180 to 180 | `12.0000` |
 
+> 💡 **Note:** Before building the image, make sure to set valid values for `lat` and `lon` in `aprs_config.ini`.  
+> These must be decimal numbers using a dot (`.`) as the decimal separator (e.g., `37.499`) and cannot be empty, otherwise the application will fail to start.
+
 ---
 
 ## Build & Run Docker
@@ -139,6 +142,9 @@ You can pass environment variables to the container to **override the values** i
 -e APRS_UPDATE_INTERVAL=900
 -e APRS_DEBUG=yes
 aprs-weather-station</pre>
+
+> 💡 **Note:** `STATION_LAT` and `STATION_LON` must be valid decimal numbers with a dot (`.`) as decimal separator (e.g., `37.499`).  
+> Empty or invalid values will cause the application to fail at startup.
 
 Behavior:
 - If INI is missing on volume → copied from `/defaults` (image default)

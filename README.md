@@ -87,7 +87,7 @@ cd python-aprs-qth-weather-station</pre>
 3. Edit `aprs_config.ini` to set your callsign, passcode, location, and settings.
 
 4. Build the docker image:
-<pre>docker build -t aprs-weather-station </pre>
+<pre>docker build -t aprs-weather-station .</pre>
 
 ### Run without persistent configuration
 Uses `aprs_config.ini` included in the image (modified ENV values are not persisted after container removal):
@@ -103,10 +103,13 @@ aprs-weather-station </pre>
 -v your-own-path/config:/config
 aprs-weather-station</pre>
 
+> 💡 Note: When using a persistent volume, if the aprs_config.ini file does not exist, the container will copy the default file from /defaults.
+After the file is created, stop the container, edit it on the host, and restart to apply your changes.
+If you use supported environment variables, their values will override the file’s settings and will be saved into the INI, making them persistent.
+
 ### Run with Environment Variables (INI overrides)
 
 You can pass environment variables to the container to **override the values** in the active `/config/aprs_config.ini`.  
-Overrides are **also saved** in the `.ini` file so they persist if you are using a mapped volume.
 
 - **Without volume:** overrides are applied for the session only and are lost when the container is removed.
 - **With volume:** overrides are saved inside the INI in `/config` and persist across restarts.
@@ -140,6 +143,7 @@ aprs-weather-station</pre>
 Behavior:
 - If INI is missing on volume → copied from `/defaults` (image default)
 - If ENV variables provided → values override INI and are written back to the file
+- ENV Overrides are **also saved** in the `.ini` file so they persist if you are using a mapped volume.
 - Config changes persist across restarts
 
 ---

@@ -271,7 +271,7 @@ Developed by an amateur radio operator for the ham community.
 
 ## Contributing
 
-Pull request, issue report e suggerimenti sono benvenuti! Si prega di aprire issue su GitHub.
+Contributions, bug reports, and feature requests are welcome!
 
 
 **73 de IT9KVB**

@@ -148,7 +148,7 @@ Behavior:
 
 Generate it online with the **APRS Passcode Generator**:  🔗 [https://apps.magicbug.co.uk/passcode/](https://apps.magicbug.co.uk/passcode/)  
 
-Enter your **callsign without SSID** — use result in `aprs_config.ini`:
+Enter your **callsign** without **SSID** and use result in `aprs_config.ini`:
 
 ---
 

@@ -1,4 +1,5 @@
 # coding: utf-8
+# app.py by N1k0droid\\IT9KVB update 14.08.25
 from flask import Flask, request, jsonify
 import json
 import time
@@ -29,7 +30,7 @@ def safe_float_conversion(value_str):
 def validate_weather_data(data):
     """Validate received weather data with realistic limits and decimal comma support"""
     limits = {
-        'temperature': (-50, 70),     # °C - extreme but realistic range
+        'temperature': (-50, 70),     # Â°C - extreme but realistic range
         'humidity': (0, 100),         # % - standard range
         'pressure': (800, 1200),      # hPa - valid barometric range
         'wind_speed': (0, 100),       # m/s - up to 360 km/h
@@ -37,7 +38,7 @@ def validate_weather_data(data):
         'wind_gust': (0, 150),        # m/s - more intense gusts
         'rain_1h': (0, 200),          # mm - maximum hourly rain
         'rain_24h': (0, 1000),        # mm - maximum daily rain
-        'dewpoint': (-60, 50)         # °C - dew point
+        'dewpoint': (-60, 50)         # Â°C - dew point
     }
     
     validated = {}

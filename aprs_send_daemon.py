@@ -1,4 +1,5 @@
 # coding: utf-8
+# aprs_send_daemon by N1k0droid\\IT9KVB update 14.08.25
 import time
 import os
 import signal

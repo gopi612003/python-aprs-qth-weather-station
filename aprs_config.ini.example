@@ -1,0 +1,35 @@
+[APRS]
+callsign = NOCALL
+ssid = 11
+passcode = 00000
+server = euro.aprs2.net
+port = 14580
+
+; Symbol settings (used for text/test mode and icon restoration)
+symbol_table = /
+symbol_code = r
+
+; Comment settings
+comment_prefix = 
+comment = 
+comment_wx = Python APRS Weather Station
+
+; Test message
+test_message = test
+
+; Weather settings
+send_weather = no
+
+; Weather format modes:
+; text = human readable format with config symbols
+; wx = APRS WX format with weather station icon
+; wx-text = send comment first, then WX data (aligned display)
+
+wx_format = text
+
+; Icon restoration after WX data (yes/no)
+restore_icon = no
+
+[Station]
+lat = 42.0000
+lon = 12.0000
